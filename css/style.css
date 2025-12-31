@@ -281,11 +281,16 @@ body {
    PAGE HERO (Non-Index Pages)
    ============================= */
 
+/* =============================
+   PAGE HERO (Non-Index Pages)
+   ============================= */
+
 .page-hero {
   position: relative;
   padding: 8rem 2rem 5rem;
   text-align: center;
-  background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+  background: linear-gradient(rgba(30, 58, 95, 0.75), rgba(15, 41, 66, 0.85)),
+              url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1600&h=600&fit=crop') center/cover;
   color: white;
   overflow: hidden;
 }
@@ -294,7 +299,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.15), transparent 70%);
+  background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.2), transparent 70%);
   animation: fadeIn 1.2s ease-out;
 }
 

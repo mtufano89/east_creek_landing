@@ -12,10 +12,18 @@
   <!-- Navigation -->
   <header class="site-header">
     <nav class="nav">
-      <a href="index.html" class="nav-logo">
-        <span>EAST CREEK LANDING</span>
-      </a>
-      <ul class="nav-links">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" alt="East Creek Landing" class="logo-img">
+  </a>
+  
+  <!-- Hamburger Button -->
+  <button class="hamburger" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  
+  <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="hall.html">The Hall</a></li>
         <li><a href="gallery.html">Gallery</a></li>
@@ -447,5 +455,34 @@
       }
     }
   </style>
+  <script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Hamburger Menu Toggle
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
+  // Close menu when clicking a link
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+    }
+  });
+</script>
+
 </body>
 </html>
