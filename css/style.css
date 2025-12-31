@@ -168,8 +168,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(rgba(30, 58, 95, 0.75), rgba(15, 41, 66, 0.85)),
-              url('../images/outside.jpg') center/cover;
+  background: url('../images/outside.jpg') center/cover;
   color: white;
   text-align: center;
   overflow: hidden;
@@ -178,7 +177,33 @@ body {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.15), transparent);
+  background: 
+    linear-gradient(135deg, rgba(30, 58, 95, 0.35), rgba(30, 58, 95, 0.45)),
+    radial-gradient(circle at 40% 40%, rgba(212, 175, 55, 0.25), transparent 70%);
+  animation: fadeIn 1.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 5;
+  }
+}
+.hero-content {
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 5;
+    transform: translateY(0);
+  }
 }
 
 .hero-content {
