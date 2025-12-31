@@ -65,7 +65,7 @@ body {
 }
 
 .logo-img {
-  height: 120px;
+  height: clamp(60px, 12vw, 120px);
   width: auto;
   display: block;
 }
@@ -80,6 +80,7 @@ body {
   cursor: pointer;
   padding: 8px;
   z-index: 101;
+  order: 3; /* Push to the right */
 }
 
 .hamburger span {
@@ -164,7 +165,7 @@ body {
 
 .hero {
   position: relative;
-  min-height: 85vh;
+  min-height: clamp(500px, 85vh, 900px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -172,6 +173,7 @@ body {
   color: white;
   text-align: center;
   overflow: hidden;
+  padding: clamp(1rem, 3vw, 2rem);
 }
 
 .hero-overlay {
@@ -188,10 +190,15 @@ body {
     opacity: 0;
   }
   to {
-    opacity: 5;
+    opacity: 1;
   }
 }
+
 .hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  padding: 0 2rem;
   animation: fadeInUp 1s ease-out 0.3s both;
 }
 
@@ -201,60 +208,55 @@ body {
     transform: translateY(30px);
   }
   to {
-    opacity: 5;
+    opacity: 1;
     transform: translateY(0);
   }
 }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  padding: 0 2rem;
-}
-
 .hero-tag {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 0.9rem;
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gold-light);
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
   font-weight: 500;
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(1.75rem, 5vw, 4rem);
   font-weight: 400;
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
   line-height: 1.2;
   letter-spacing: 0.02em;
 }
 
 .hero-subtitle {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 1.2rem;
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
   max-width: 700px;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto;
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
   color: rgba(255, 255, 255, 0.95);
   font-weight: 300;
   line-height: 1.6;
+  padding: 0 clamp(0.5rem, 2vw, 0);
 }
 
 .hero-ctas {
   display: flex;
-  gap: 1rem;
+  gap: clamp(0.75rem, 2vw, 1rem);
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 3rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
 .hero-features {
   display: flex;
-  gap: 1.5rem;
+  gap: clamp(0.5rem, 2vw, 1.5rem);
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 3rem;
+  margin-top: clamp(2rem, 4vw, 3rem);
 }
 
 .feature-chip {
@@ -264,15 +266,15 @@ body {
   gap: 0.5rem;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
-  padding: 0.6rem 1.2rem;
+  padding: clamp(0.5rem, 1.5vw, 0.6rem) clamp(0.8rem, 2vw, 1.2rem);
   border-radius: 50px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
   font-weight: 500;
 }
 
 .feature-icon {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
 /* =============================
@@ -282,11 +284,11 @@ body {
 .btn {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1.25rem, 3vw, 2rem);
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
   transition: all 0.3s ease;
   cursor: pointer;
   border: none;
@@ -341,7 +343,7 @@ body {
    ============================= */
 
 .section {
-  padding: 5rem 2rem;
+  padding: clamp(3rem, 8vw, 5rem) clamp(1rem, 3vw, 2rem);
 }
 
 .section-inner {
@@ -351,19 +353,19 @@ body {
 
 .section-header {
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
 }
 
 .section-header h2 {
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 400;
   color: var(--navy);
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.75rem, 2vw, 1rem);
 }
 
 .section-header p {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
   color: var(--text-muted);
   max-width: 700px;
   margin: 0 auto;
@@ -395,23 +397,23 @@ body {
 }
 
 .overview-text h2 {
-  font-size: 2.2rem;
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
   color: var(--navy);
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
   font-weight: 400;
 }
 
 .overview-text p {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 1.05rem;
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
   line-height: 1.8;
   color: var(--text-dark);
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
 }
 
 .overview-image img {
   width: 100%;
-  height: 500px;
+  height: clamp(250px, 50vw, 500px);
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
@@ -446,7 +448,7 @@ body {
 
 .space-image {
   position: relative;
-  height: 280px;
+  height: clamp(200px, 35vw, 280px);
   overflow: hidden;
 }
 
@@ -476,11 +478,11 @@ body {
 }
 
 .space-content {
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
 }
 
 .space-content h3 {
-  font-size: 1.8rem;
+  font-size: clamp(1.3rem, 2.8vw, 1.8rem);
   color: var(--navy);
   margin-bottom: 0.5rem;
   font-weight: 400;
@@ -496,9 +498,9 @@ body {
 
 .space-content > p {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
   color: var(--text-dark);
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
   line-height: 1.7;
 }
 
@@ -509,10 +511,10 @@ body {
 }
 
 .space-features li {
-  padding: 0.5rem 0;
+  padding: clamp(0.3rem, 1vw, 0.5rem) 0;
   padding-left: 1.5rem;
   position: relative;
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1.6vw, 0.95rem);
   color: var(--text-dark);
 }
 
@@ -544,12 +546,12 @@ body {
 .event-types {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .event-type {
   text-align: center;
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -562,19 +564,19 @@ body {
 }
 
 .event-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: clamp(2.5rem, 5vw, 3rem);
+  margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
 }
 
 .event-type h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  margin-bottom: clamp(0.3rem, 1vw, 0.5rem);
   font-weight: 400;
 }
 
 .event-type p {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1.6vw, 0.95rem);
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -586,7 +588,7 @@ body {
   background: linear-gradient(135deg, #8b0000, #dc143c);
   color: white;
   text-align: center;
-  padding: 4rem 2rem;
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1rem, 3vw, 2rem);
 }
 
 .bingo-content {
@@ -595,8 +597,8 @@ body {
 }
 
 .bingo-icon {
-  font-size: 4rem;
-  margin-bottom: 1rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -606,15 +608,15 @@ body {
 }
 
 .bingo-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
   font-weight: 400;
 }
 
 .bingo-content p {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  margin-bottom: clamp(1.5rem, 2.5vw, 2rem);
   color: rgba(255, 255, 255, 0.95);
 }
 
@@ -630,30 +632,30 @@ body {
 .cta-box {
   max-width: 800px;
   margin: 0 auto;
-  padding: 3rem;
+  padding: clamp(2rem, 4vw, 3rem);
   background: white;
   border-radius: 16px;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
 }
 
 .cta-box h2 {
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   color: var(--navy);
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
   font-weight: 400;
 }
 
 .cta-box p {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
   color: var(--text-muted);
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1.5rem, 2.5vw, 2rem);
   line-height: 1.8;
 }
 
 .cta-buttons {
   display: flex;
-  gap: 1rem;
+  gap: clamp(0.75rem, 2vw, 1rem);
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -665,27 +667,28 @@ body {
 .site-footer {
   background: var(--navy-dark);
   color: white;
-  padding: 4rem 2rem 2rem;
+  padding: clamp(3rem, 6vw, 4rem) clamp(1rem, 3vw, 2rem) clamp(1.5rem, 3vw, 2rem);
 }
 
 .footer-grid {
   max-width: 1200px;
-  margin: 0 auto 3rem;
+  margin: 0 auto;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 3rem;
+  gap: clamp(2rem, 4vw, 3rem);
 }
 
 .footer-col h4 {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+  margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
   color: var(--gold-light);
   font-weight: 400;
 }
 
 .footer-col p {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1.6vw, 0.95rem);
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.7;
   margin-bottom: 0.75rem;
@@ -705,7 +708,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1.6vw, 0.95rem);
   transition: color 0.3s ease;
 }
 
@@ -728,7 +731,7 @@ body {
 }
 
 /* =============================
-   RESPONSIVE
+   RESPONSIVE BREAKPOINTS
    ============================= */
 
 @media (max-width: 968px) {
@@ -780,57 +783,37 @@ body {
     text-align: center;
   }
 
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
   .overview-grid,
   .spaces-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: clamp(2rem, 4vw, 2.5rem);
   }
 
   .event-types {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
   }
 
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
   }
 }
 
 @media (max-width: 600px) {
-  .section {
-    padding: 3rem 1.5rem;
-  }
-
-  .section-header h2 {
-    font-size: 2rem;
-  }
-
-  .hero {
-    min-height: 70vh;
-  }
-
   .hero-ctas {
     flex-direction: column;
   }
 
-  .hero-ctas .btn {
+  .hero-ctas .btn,
+  .cta-buttons .btn {
     width: 100%;
   }
 
-  .event-types {
-    grid-template-columns: 1fr;
+  .cta-buttons {
+    flex-direction: column;
   }
 
+  .event-types,
   .footer-grid {
     grid-template-columns: 1fr;
-  }
-
-  .cta-box {
-    padding: 2rem 1.5rem;
   }
 }
