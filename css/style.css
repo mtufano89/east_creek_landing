@@ -870,3 +870,41 @@ body {
     grid-template-columns: 1fr;
   }
 }
+/* Hide phone CTA on mobile, show in menu instead */
+@media (max-width: 968px) {
+  .nav-cta {
+    display: none;
+  }
+  
+  .nav-links::after {
+    content: '📞 (203) 988-2406';
+    display: block;
+    padding: 1.5rem 0;
+    padding-top: 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-align: center;
+    border-top: 2px solid #f1f5f9;
+    margin-top: 1rem;
+  }
+}
+.floating-availability-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--gold);
+  color: var(--navy-dark);
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+  z-index: 99;
+  transition: all 0.3s ease;
+}
+
+.floating-availability-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.6);
+}
