@@ -1071,7 +1071,7 @@ body {
 /* Logo section - centered with white background */
 .nav-logo-section {
   background: white;
-  padding: 1.5rem 2rem;
+  padding: 1rem 1rem;
   text-align: center;
   border-bottom: 3px solid var(--cream);
 }
