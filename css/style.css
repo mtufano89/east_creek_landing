@@ -1463,3 +1463,58 @@ body {
     text-align: center;
   }
 }
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+.features-grid {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+.bingo-section {
+  background: linear-gradient(135deg, #8b1538, #a81d4a);
+  /* Or use your gold */
+  background: linear-gradient(135deg, #b8922e, #d4af37);
+}
+.event-card {
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+.created-by {
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+.floating-availability {
+  background: linear-gradient(135deg, #d4af37, #f0d05c);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+}
+/* Smooth Gradient Transition Between Header Sections */
+.header-top {
+  background: linear-gradient(180deg, #f9f6ed 0%, #f5efd8 80%, rgba(255,255,255,0.8) 100%);
+  padding-bottom: 2rem; /* Extra padding for fade */
+}
+
+.main-nav {
+  background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, white 20%);
+  padding-top: 2rem; /* Extra padding for fade */
+}
+
+/* Logo sits in the overlap zone */
+.header-logo {
+  position: relative;
+  text-align: center;
+  margin-top: -60px;
+  z-index: 10;
+}
