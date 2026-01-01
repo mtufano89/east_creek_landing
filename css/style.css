@@ -1371,3 +1371,45 @@ body {
     position: relative;
   }
 }
+/* Floating Availability Button */
+.floating-availability {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--navy-dark);
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.5);
+  z-index: 999;
+  transition: all 0.3s ease;
+  display: none; /* Hidden by default */
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.floating-availability:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.7);
+}
+
+/* Show only on mobile/tablet */
+@media (max-width: 968px) {
+  .floating-availability {
+    display: flex;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 600px) {
+  .floating-availability {
+    bottom: 15px;
+    right: 15px;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
