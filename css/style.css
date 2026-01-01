@@ -1413,3 +1413,53 @@ body {
     font-size: 0.9rem;
   }
 }
+
+/* Make "Book Your Event" stand out more */
+.hero-ctas .btn-primary {
+  background: var(--gold);
+  color: var(--navy-dark);
+  font-size: 1.1rem;
+  padding: 1rem 2.5rem;
+}
+
+.hero-ctas .btn-secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.footer-bottom {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.created-by a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.created-by a:hover {
+  color: var(--gold-light);
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
