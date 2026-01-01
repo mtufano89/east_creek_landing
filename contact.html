@@ -152,13 +152,16 @@
           <h2>Send Us a Message</h2>
           <p class="form-intro">Fill out the form below and we'll get back to you as soon as possible.</p>
 
-          <form 
-          class="contact-form" action="https://formsubmit.co/eastcreeklanding390@gmail.com" method="POST">
-            <!-- Hidden FormSubmit fields -->
-            <input type="hidden" name="_subject" value="New Inquiry from East Creek Landing Website">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            action="https://formsubmit.co/eastcreeklanding390@gmail.com" method="POST">
+       <form class="contact-form" action="https://formsubmit.co/eastcreeklanding390@gmail.com" method="POST">
+  <!-- Honeypot spam protection -->
+  <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+  
+  <!-- Hidden FormSubmit fields -->
+  <input type="hidden" name="_subject" value="New Inquiry from East Creek Landing Website">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  
+  <!-- Rest of your form fields... -->
   
   <!-- Honeypot - ADD HERE (right after <form>) -->
   <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
