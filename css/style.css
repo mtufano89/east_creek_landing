@@ -1539,3 +1539,19 @@ body {
     font-size: 0.95rem;
   }
 }
+
+@media (max-width: 768px) {
+  .check-availability {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .hero-buttons a:last-child {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .hero-buttons a:last-child {
+    display: none;
+  }
+}
