@@ -403,6 +403,61 @@
       }
     });
 
+    // Simple ICS parser
+    function parseICS(icsData) {
+      const events = [];
+      const lines = icsData.split(/\r?\n/);
+      let currentEvent = null;
+
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+
+        if (line === 'BEGIN:VEVENT') {
+          currentEvent = {};
+        } else if (line === 'END:VEVENT' && currentEvent) {
+          if (currentEvent.start) {
+            events.push({
+              title: 'Booked', // Always show "Booked" regardless of actual title
+              start: currentEvent.start,
+              end: currentEvent.end,
+              allDay: currentEvent.allDay || false,
+              backgroundColor: '#dc3545',
+              borderColor: '#dc3545'
+            });
+          }
+          currentEvent = null;
+        } else if (currentEvent) {
+          if (line.startsWith('DTSTART')) {
+            const dateMatch = line.match(/:([\dT]+)/);
+            if (dateMatch) {
+              const dateStr = dateMatch[1];
+              if (dateStr.includes('T')) {
+                // DateTime format: 20260119T090000
+                currentEvent.start = dateStr.replace(/(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/, '$1-$2-$3T$4:$5:$6');
+                currentEvent.allDay = false;
+              } else {
+                // Date only format: 20260119
+                currentEvent.start = dateStr.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3');
+                currentEvent.allDay = true;
+              }
+            }
+          } else if (line.startsWith('DTEND')) {
+            const dateMatch = line.match(/:([\dT]+)/);
+            if (dateMatch) {
+              const dateStr = dateMatch[1];
+              if (dateStr.includes('T')) {
+                currentEvent.end = dateStr.replace(/(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/, '$1-$2-$3T$4:$5:$6');
+              } else {
+                currentEvent.end = dateStr.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3');
+              }
+            }
+          }
+        }
+      }
+
+      return events;
+    }
+
     // Initialize FullCalendar
     document.addEventListener('DOMContentLoaded', function() {
       var calendarEl = document.getElementById('calendar');
@@ -417,14 +472,30 @@
         },
         height: 'auto',
         
-        // Your Outlook ICS feed with cache-busting
-        events: {
-          url: 'https://outlook.live.com/owa/calendar/4d210bd6-8451-42dc-a616-3addce0ef42a/73fbc589-48db-4179-9995-96d29b695dcc/cid-C16AC9415C6664D6/calendar.ics?t=' + new Date().getTime(),
-          format: 'ics',
-          failure: function() {
-            loadingEl.innerHTML = 'Failed to load calendar. Please refresh the page or contact us directly.';
-            loadingEl.style.color = '#dc3545';
-          }
+        // Your Outlook ICS feed through CORS proxy
+        events: function(info, successCallback, failureCallback) {
+          // Use CORS proxy to fetch the ICS feed
+          fetch('https://corsproxy.io/?' + encodeURIComponent('https://outlook.live.com/owa/calendar/4d210bd6-8451-42dc-a616-3addce0ef42a/73fbc589-48db-4179-9995-96d29b695dcc/cid-C16AC9415C6664D6/calendar.ics'))
+            .then(response => response.text())
+            .then(icsData => {
+              console.log('ICS data received:', icsData.substring(0, 200)); // Log first 200 chars
+              
+              // Parse ICS manually
+              const events = parseICS(icsData);
+              console.log('Parsed events:', events);
+              successCallback(events);
+              loadingEl.style.display = 'none';
+            })
+            .catch(error => {
+              console.error('Failed to load calendar:', error);
+              loadingEl.innerHTML = 'Failed to load calendar. Please refresh the page or contact us directly.';
+              loadingEl.style.color = '#dc3545';
+              failureCallback(error);
+            });
+        },
+        
+        eventsSet: function(events) {
+          console.log('Events set in calendar:', events);
         },
         
         loading: function(isLoading) {
