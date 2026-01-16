@@ -417,9 +417,9 @@
         },
         height: 'auto',
         
-        // Your Outlook ICS feed
+        // Your Outlook ICS feed with cache-busting
         events: {
-          url: 'https://outlook.live.com/owa/calendar/4d210bd6-8451-42dc-a616-3addce0ef42a/73fbc589-48db-4179-9995-96d29b695dcc/cid-C16AC9415C6664D6/calendar.ics',
+          url: 'https://outlook.live.com/owa/calendar/4d210bd6-8451-42dc-a616-3addce0ef42a/73fbc589-48db-4179-9995-96d29b695dcc/cid-C16AC9415C6664D6/calendar.ics?t=' + new Date().getTime(),
           format: 'ics',
           failure: function() {
             loadingEl.innerHTML = 'Failed to load calendar. Please refresh the page or contact us directly.';
