@@ -468,7 +468,7 @@
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
-          right: 'dayGridMonth,listMonth'
+          right: ''
         },
         height: 'auto',
         
@@ -526,24 +526,10 @@
           info.jsEvent.preventDefault();
           // Show generic message - no event details revealed
           alert('This date is booked. Please choose another date or contact us for more information.');
-        },
-        
-        // Mobile responsive settings
-        windowResize: function(view) {
-          if (window.innerWidth < 768) {
-            calendar.changeView('listMonth');
-          } else {
-            calendar.changeView('dayGridMonth');
-          }
         }
       });
       
       calendar.render();
-      
-      // Set initial view based on screen size
-      if (window.innerWidth < 768) {
-        calendar.changeView('listMonth');
-      }
     });
   </script>
 
