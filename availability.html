@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Check availability for East Creek Landing banquet hall in Guilford, CT. View our real-time calendar to find the perfect date for your event.">
-  <title>Check Availability | East Creek Landing</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Check availability for East Creek Landing banquet hall in Guilford, CT. View booked and open dates in real time." />
+  <title>Availability | East Creek Landing</title>
+
+  <link rel="stylesheet" href="css/style.css" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -14,294 +15,151 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
   <style>
-    .calendar-container {
-      max-width: 1000px;
+    .calendar-wrapper {
+      max-width: 1100px;
       margin: 0 auto;
-      background: white;
-      padding: 2rem;
+      background: #fff;
+      padding: 1.5rem;
       border-radius: 12px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     }
 
-    /* Responsive iframe wrapper */
-    .calendar-embed {
-      position: relative;
+    iframe {
       width: 100%;
       height: 650px;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid #e5e7eb;
-      background: #fff;
-    }
-
-    .calendar-embed iframe {
-      width: 100%;
-      height: 100%;
       border: 0;
     }
 
-    @media (max-width: 768px) {
-      .calendar-container {
-        padding: 1rem;
-      }
-
-      .calendar-embed {
-        height: 700px;
-      }
+    .calendar-note {
+      text-align: center;
+      margin-top: 1.25rem;
+      font-size: 0.95rem;
+      color: #6b7280;
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Navigation -->
-  <header class="site-header">
-    <!-- Top Info Bar (Light Blue) -->
-    <div class="header-top">
-      <div class="header-top-inner">
-        <div class="header-contact">
-          <a href="tel:2039882406" class="phone-link">
-            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
-            </svg>
-            (203) 988-2406
-          </a>
-        </div>
-      </div>
+<!-- Header -->
+<header class="site-header">
+  <div class="header-top">
+    <div class="header-top-inner">
+      <a href="tel:2039882406" class="phone-link">(203) 988-2406</a>
+    </div>
+  </div>
+
+  <div class="header-logo">
+    <a href="index.html">
+      <img src="images/logo.png" alt="East Creek Landing" class="logo-img">
+    </a>
+  </div>
+
+  <nav class="main-nav">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="hall.html">The Hall</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="availability.html" class="active">Availability</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="page-hero">
+  <div class="page-hero-content">
+    <p class="eyebrow">Availability</p>
+    <h1>Check Available Dates</h1>
+    <p>Busy dates are booked. Open dates are available.</p>
+  </div>
+</section>
+
+<!-- Calendar -->
+<section class="section">
+  <div class="section-inner">
+
+    <div class="calendar-wrapper">
+      <iframe
+        src="https://calendar.google.com/calendar/embed?src=eastcreeklanding390%40gmail.com&ctz=America%2FNew_York"
+        scrolling="no">
+      </iframe>
     </div>
 
-    <!-- Logo Section (Overlapping) -->
-    <div class="header-logo">
-      <a href="index.html">
-        <img src="images/logo.png" alt="East Creek Landing" class="logo-img">
-      </a>
-    </div>
+    <p class="calendar-note">
+      Dates marked as <strong>Busy</strong> are already booked.
+      Open dates are available. Please call or message us to reserve.
+    </p>
 
-    <!-- Main Navigation (White Bar) -->
-    <nav class="main-nav">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="hall.html">The Hall</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="availability.html" class="active">Availability</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+  </div>
+</section>
 
-      <!-- Hamburger for mobile -->
-      <button class="hamburger" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
-  </header>
-
-  <!-- Page Hero -->
-  <section class="page-hero">
-    <div class="page-hero-content">
-      <p class="eyebrow">Availability Calendar</p>
-      <h1>Check Our Available Dates</h1>
-      <p>View our calendar to see which dates are open for your special event</p>
-    </div>
-  </section>
-
-  <!-- Calendar Section -->
-  <section class="section">
-    <div class="section-inner">
-      <div class="section-header">
-        <h2>Real-Time Availability</h2>
-        <p>
-          Dates shown as <strong>Busy</strong> are already booked. If you see an open date that works for your event,
-          give us a call or send a message to reserve it.
-        </p>
-      </div>
-
-      <div class="calendar-container">
-        <div class="calendar-embed" aria-label="East Creek Landing Availability Calendar">
-          <iframe
-            src="https://calendar.google.com/calendar/embed?src=eastcreeklanding390%40gmail.com&ctz=America%2FNew_York"
-            scrolling="no"
-            title="East Creek Landing Availability Calendar">
-          </iframe>
-        </div>
-      </div>
-
-      <p style="text-align: center; margin-top: 1.5rem; color: #6b7280; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
-        <strong>Note:</strong> Busy dates are booked. Open dates are available. Use the arrows to view future months.
-      </p>
-    </div>
-  </section>
-
-  <!-- Next Steps -->
-  <section class="section" style="background: var(--cream);">
-    <div class="section-inner">
-      <div class="section-header">
-        <h2>Found Your Perfect Date?</h2>
-        <p>Let's make it official! Here's how to reserve your date at East Creek Landing.</p>
-      </div>
-
-      <div class="event-types">
-        <div class="event-type">
-          <div class="event-icon">📞</div>
-          <h3>Call to Reserve</h3>
-          <p>Speak directly with our rental agent to check availability and reserve your date.</p>
-          <a href="tel:2039882406" class="btn btn-outline" style="margin-top: 1rem;">Call (203) 988-2406</a>
-        </div>
-        <div class="event-type">
-          <div class="event-icon">✉️</div>
-          <h3>Send an Inquiry</h3>
-          <p>Fill out our contact form with your preferred date and event details.</p>
-          <a href="contact.html" class="btn btn-outline" style="margin-top: 1rem;">Contact Us</a>
-        </div>
-        <div class="event-type">
-          <div class="event-icon">🏛️</div>
-          <h3>Schedule a Tour</h3>
-          <p>Visit East Creek Landing to see our beautiful venues in person.</p>
-          <a href="contact.html" class="btn btn-outline" style="margin-top: 1rem;">Book a Tour</a>
-        </div>
+<!-- CTA -->
+<section class="section cta-section">
+  <div class="section-inner">
+    <div class="cta-box">
+      <h2>Questions About Availability?</h2>
+      <p>Contact us to reserve a date or schedule a tour.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn btn-primary">Contact Us</a>
+        <a href="tel:2039882406" class="btn btn-secondary">(203) 988-2406</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Booking Info -->
-  <section class="section">
-    <div class="section-inner">
-      <div class="overview-grid">
-        <div class="overview-text">
-          <h3>📋 Reservation Process</h3>
-          <ol style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.8; padding-left: 1.5rem;">
-            <li>Check the calendar for available dates</li>
-            <li>Contact us by phone or email</li>
-            <li>Schedule a tour (optional but recommended)</li>
-            <li>Submit deposit to reserve your date</li>
-            <li>Finalize details closer to your event</li>
-          </ol>
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
 
-          <h3 style="margin-top: 2rem;">⏰ Booking Timeline</h3>
-          <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
-            <strong>Popular dates</strong> (weekends, holidays) book 6-12 months in advance.
-          </p>
-          <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
-            <strong>Weekday events</strong> often have more flexibility and shorter lead times.
-          </p>
-          <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
-            <strong>Last-minute availability?</strong> Call us! We sometimes have openings for events within 30 days.
-          </p>
-        </div>
-
-        <div class="overview-text">
-          <h3>💡 Planning Tips</h3>
-          <ul style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.8; list-style: none; padding-left: 0;">
-            <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
-              <span style="position: absolute; left: 0; color: var(--gold); font-weight: bold;">✓</span>
-              Saturday evenings are our most popular time slots
-            </li>
-            <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
-              <span style="position: absolute; left: 0; color: var(--gold); font-weight: bold;">✓</span>
-              Friday and Sunday events often have better availability
-            </li>
-            <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
-              <span style="position: absolute; left: 0; color: var(--gold); font-weight: bold;">✓</span>
-              Off-season months (Jan-Mar) tend to have more openings
-            </li>
-            <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
-              <span style="position: absolute; left: 0; color: var(--gold); font-weight: bold;">✓</span>
-              Bingo is held every Monday evening
-            </li>
-          </ul>
-        </div>
+      <div class="footer-col">
+        <h4>East Creek Landing</h4>
+        <p>390 S Union St<br>Guilford, CT 06437</p>
       </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="hall.html">The Hall</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="services.html">Services</a>
+        <a href="availability.html">Availability</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>(203) 988-2406</p>
+        <p>eastcreeklanding390@gmail.com</p>
+      </div>
+
     </div>
-  </section>
 
-  <!-- CTA Section -->
-  <section class="section cta-section">
-    <div class="section-inner">
-      <div class="cta-box">
-        <h2>Have Questions About Availability?</h2>
-        <p>Our team is here to help you find the perfect date for your event. We'll work with you to accommodate your schedule.</p>
-        <div class="cta-buttons">
-          <a href="contact.html" class="btn btn-primary">Get in Touch</a>
-          <a href="tel:2039882406" class="btn btn-secondary">Call (203) 988-2406</a>
-        </div>
-      </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> East Creek Landing</p>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4>East Creek Landing</h4>
-          <p>Affordable elegance on the Connecticut shoreline</p>
-          <p class="footer-address">
-            390 S Union St<br>
-            Guilford, CT 06437
-          </p>
-        </div>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul class="footer-links-col">
-            <a href="index.html">Home</a>
-            <a href="hall.html">The Hall</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="services.html">Services</a>
-            <a href="availability.html">Availability</a>
-            <a href="bingo.html">Bingo Nights</a>
-            <a href="contact.html">Contact</a>
-          </ul>
-        </div>
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
 
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <p><strong>Rental Agent:</strong><br>(203) 988-2406</p>
-          <p><strong>Email:</strong><br>eastcreeklanding390@gmail.com</p>
-        </div>
-
-        <div class="footer-col">
-          <h4>🎰 Bingo Nights</h4>
-          <p><strong>Every Monday</strong><br>Doors: 5:00 PM<br>Games: 7:00 PM<br>Jackpot up to $2,100!</p>
-          <p class="footer-spacer"><strong>Event Bookings:</strong><br>By appointment</p>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> East Creek Landing. All rights reserved.</p>
-        <p class="created-by">
-          Website by <a href="https://www.shorelinedevco.com" target="_blank" rel="noopener">Shoreline Dev Co</a>
-        </p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Hamburger Menu Toggle
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navLinks.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
-      });
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
-      }
-    });
-  </script>
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+</script>
 
 </body>
 </html>
