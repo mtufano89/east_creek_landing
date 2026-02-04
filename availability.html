@@ -41,125 +41,131 @@
 
 <body>
 
-<!-- Header -->
-<header class="site-header">
-  <div class="header-top">
-    <div class="header-top-inner">
-      <a href="tel:2039882406" class="phone-link">(203) 988-2406</a>
-    </div>
-  </div>
-
-  <div class="header-logo">
-    <a href="index.html">
-      <img src="images/logo.png" alt="East Creek Landing" class="logo-img">
-    </a>
-  </div>
-
-  <nav class="main-nav">
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="hall.html">The Hall</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="availability.html" class="active">Availability</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-
-    <button class="hamburger" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </nav>
-</header>
-
-<!-- Hero -->
-<section class="page-hero">
-  <div class="page-hero-content">
-    <p class="eyebrow">Availability</p>
-    <h1>Check Available Dates</h1>
-    <p>Busy dates are booked. Open dates are available.</p>
-  </div>
-</section>
-
-<!-- Calendar -->
-<section class="section">
-  <div class="section-inner">
-
-    <div class="calendar-wrapper">
-      <iframe
-        src="https://calendar.google.com/calendar/embed?src=eastcreeklanding390%40gmail.com&ctz=America%2FNew_York"
-        scrolling="no">
-      </iframe>
-    </div>
-
-    <p class="calendar-note">
-      Dates marked as <strong>Busy</strong> are already booked.
-      Open dates are available. Please call or message us to reserve.
-    </p>
-
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="section cta-section">
-  <div class="section-inner">
-    <div class="cta-box">
-      <h2>Questions About Availability?</h2>
-      <p>Contact us to reserve a date or schedule a tour.</p>
-      <div class="cta-buttons">
-        <a href="contact.html" class="btn btn-primary">Contact Us</a>
-        <a href="tel:2039882406" class="btn btn-secondary">(203) 988-2406</a>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-top">
+      <div class="header-top-inner">
+        <div class="header-contact">
+          <a href="tel:2039882406" class="phone-link">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+            </svg>
+            (203) 988-2406
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- Footer -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-grid">
-
-      <div class="footer-col">
-        <h4>East Creek Landing</h4>
-        <p>390 S Union St<br>Guilford, CT 06437</p>
-      </div>
-
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <a href="index.html">Home</a>
-        <a href="hall.html">The Hall</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="services.html">Services</a>
-        <a href="availability.html">Availability</a>
-        <a href="contact.html">Contact</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <p>(203) 988-2406</p>
-        <p>eastcreeklanding390@gmail.com</p>
-      </div>
-
+    <div class="header-logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="East Creek Landing" class="logo-img">
+      </a>
     </div>
 
-    <div class="footer-bottom">
-      <p>&copy; <span id="year"></span> East Creek Landing</p>
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="hall.html">The Hall</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="availability.html" class="active">Availability</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <p class="eyebrow">Availability</p>
+      <h1>Check Available Dates</h1>
+      <p>Busy dates are booked. Open dates are available.</p>
     </div>
-  </div>
-</footer>
+  </section>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+  <!-- Calendar -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="calendar-wrapper">
+        <iframe
+          src="https://calendar.google.com/calendar/embed?src=eastcreeklanding390%40gmail.com&ctz=America%2FNew_York"
+          scrolling="no"
+          title="East Creek Landing Availability Calendar">
+        </iframe>
+      </div>
 
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
+      <p class="calendar-note">
+        Dates marked as <strong>Busy</strong> are already booked.
+        Open dates are available. Please call or message us to reserve.
+      </p>
+    </div>
+  </section>
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-  });
-</script>
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="section-inner">
+      <div class="cta-box">
+        <h2>Questions About Availability?</h2>
+        <p>Contact us to reserve a date or schedule a tour.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn btn-primary">Contact Us</a>
+          <a href="tel:2039882406" class="btn btn-secondary">(203) 988-2406</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>East Creek Landing</h4>
+          <p>390 S Union St<br>Guilford, CT 06437</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links-col">
+            <a href="index.html">Home</a>
+            <a href="hall.html">The Hall</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="services.html">Services</a>
+            <a href="availability.html">Availability</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>(203) 988-2406</p>
+          <p>eastcreeklanding390@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> East Creek Landing</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>
