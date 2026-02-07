@@ -1358,3 +1358,22 @@ body {
     margin-top: clamp(1rem, 2vw, 1.5rem);
   }
 }
+/* Mobile: make event pills readable */
+@media (max-width: 480px) {
+  .fc .fc-daygrid-event {
+    width: 100%;
+    margin: 2px 0 !important;
+    border-radius: 8px;
+  }
+
+  .fc .fc-daygrid-event .fc-event-title {
+    font-size: 12px !important;
+    white-space: normal !important;  /* allow wrapping if needed */
+    overflow: visible !important;
+  }
+
+  /* keep the text from being clipped */
+  .fc .fc-daygrid-event-harness {
+    overflow: visible !important;
+  }
+}
